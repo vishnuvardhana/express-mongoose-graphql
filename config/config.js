@@ -7,7 +7,7 @@ module.exports = {
         }
     },
     production: {
-        db: 'mongodb://<username>:<password>@ds157325.mlab.com:57325/phase-db',
+        db: 'mongodb://<username>:<password>@ds157325.mlab.com:57325/graphql',
         app: {
             name: 'graphql'
         }
