@@ -1,17 +1,10 @@
-var GraphQLSchema = require('graphql').GraphQLSchema;
-var GraphQLObjectType = require('graphql').GraphQLObjectType;
-var queryType = require('./queries/user').queryType;
-var mutation = require('./mutations/index');
-var user = require('./mutations');
-exports.schemas = {
-  user
-}
+var taskSchema = require('./task/index').taskSchema;
+var userSchema = require('./user/index').userSchema;
+const mergeSchemas = require('graphql-tools').mergeSchemas;
 
-// exports.userSchema = new GraphQLSchema({
-//   query: queryType,
-//   mutation: new GraphQLObjectType({
-//     name: 'Mutation',
-//     fields: mutation
-//   })
-// })
+const schemas = [
+    taskSchema,
+    userSchema,
+];
 
+exports.allSchemas = mergeSchemas({schemas: schemas});

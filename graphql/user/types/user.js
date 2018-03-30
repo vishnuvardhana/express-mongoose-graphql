@@ -13,10 +13,7 @@ exports.userType = new GraphQLObjectType({
       id: {
         type: new GraphQLNonNull(GraphQLID)
       },
-      email: {
-        type: GraphQLString
-      },
-      password: {
+      name: {
         type: GraphQLString
       }
     }

@@ -1,22 +1,22 @@
 
 var GraphQLNonNull = require('graphql').GraphQLNonNull;
 var GraphQLString = require('graphql').GraphQLString;
-var UserType = require('../../types/user');
-var UserModel = require('../../../models/user');
+var taskType = require('../types/task');
+var TaskModel = require('../../../models/task');
 
 exports.add = {
-  type: UserType.userType,
+  type: taskType.taskType,
   args: {
-    email: {
+    name: {
       type: new GraphQLNonNull(GraphQLString),
     }
   },
   resolve(root, params) {
-    const uModel = new UserModel(params);
-    const newUser = uModel.save();
-    if (!newUser) {
+    const tModel = new TaskModel(params);
+    const newTask = tModel.save();
+    if (!newTask) {
       throw new Error('Error');
     }
-    return newUser
+    return newTask
   }
 }
