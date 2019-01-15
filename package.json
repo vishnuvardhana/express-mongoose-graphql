@@ -1,7 +1,7 @@
 {
     "name": "express-mongoose-graphql",
     "version": "1.0.0",
-    "description": "",
+    "description": "This is a mongodb graphql starter",
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
